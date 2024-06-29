@@ -1,22 +1,31 @@
-var array1=[];
-var n1 = 0;
-var n2 = 1;
-var sum = 0;
-
+//create a function that takes as parameter an n integer and it returns n digits from the fibonacci sequence as an array.
 
 function fibonacciGenerator (n){
 
-    for(var counter = 1; counter <= n; counter++){
-        array1.push(sum);
-        sum = n1 + n2;
-        n1 = n2;
-        n2 = sum;
+var output=[];
 
+    if (n == 1){
+        output = [0];
+    
     }
 
-console.log(array1);
-    
+    else if (n == 2){
+        output = [0,1];
+
+    }
+         
+    else{
+        output = [0,1];
+        for(var counter = 2; counter < n; counter++){
+            output.push(output[output.length-2]+output[output.length-1]);
+        }
+
+
+    }
+    console.log(output);
+
 }
 
-    
-fibonacciGenerator(5)
+//calling the function,    
+
+fibonacciGenerator(3)
